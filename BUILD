@@ -10,7 +10,9 @@ java_library(
 )
 
 java_binary(
-    name = "chess",
+    name = "example",
+    #resource_strip_prefix = "src/main/resources",
+    resources = glob(["src/main/resources/*"]),
     main_class = "com.siu.edu.vn.chess.App",
     runtime_deps = [":lib"],
 )
