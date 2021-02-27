@@ -61,6 +61,7 @@ maven_repository_specification(
         "com.google.errorprone:error_prone_annotations:2.1.3" : { "insecure": True },
         "com.google.j2objc:j2objc-annotations:1.1" : { "insecure": True } ,
         "org.codehaus.mojo:animal-sniffer-annotations:1.14" : { "insecure": True },
-
+        "junit:junit:4.12": { "insecure": True } ,
+        "org.hamcrest:hamcrest-core:1.3": { "insecure": True } ,
     }
 )

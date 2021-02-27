@@ -1,5 +1,4 @@
-
-load("@rules_java//java:defs.bzl", "java_binary", "java_library")
+load("@rules_java//java:defs.bzl", "java_binary", "java_library", "java_test")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -11,8 +10,20 @@ java_library(
 
 java_binary(
     name = "example",
-    #resource_strip_prefix = "src/main/resources",
     resources = glob(["src/main/resources/*"]),
     main_class = "com.siu.edu.vn.chess.App",
     runtime_deps = [":lib"],
+)
+
+
+
+java_test(
+    name = "tests",
+    srcs = glob(["src/main/test/java/com/siu/edu/vn/chess/*.java"]),
+    test_class = "com.siu.edu.vn.chess.TestApp",
+    deps = [
+        ":lib",
+        "@maven//com/google/guava",
+        "@maven//junit",
+    ],
 )
