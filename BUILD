@@ -15,8 +15,6 @@ java_binary(
     runtime_deps = [":lib"],
 )
 
-
-
 java_test(
     name = "tests",
     srcs = glob(["src/main/test/java/com/siu/edu/vn/chess/*.java"]),
