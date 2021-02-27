@@ -4,14 +4,26 @@ package(default_visibility = ["//visibility:public"])
 
 java_library(
     name = "lib",
-    srcs = glob(["src/main/java/com/siu/edu/vn/chess/*.java"]),
+    srcs = glob(["src/main/java/com/siu/edu/vn/**/*.java"]),
     deps = ["@maven//com/google/guava"],
 )
 
 java_binary(
-    name = "example",
-    resources = glob(["src/main/resources/*"]),
-    main_class = "com.siu.edu.vn.chess.App",
+     name = "chess",
+     resources = glob(["src/main/resources/*"]),
+     main_class = "com.siu.edu.vn.chess.App",
+     runtime_deps = [":lib"],
+ )
+
+java_binary(
+    name = "test",
+    main_class = "com.siu.edu.vn.example.Test",
+    runtime_deps = [":lib"],
+)
+
+java_binary(
+    name = "test1",
+    main_class = "com.siu.edu.vn.chess.Test",
     runtime_deps = [":lib"],
 )
 

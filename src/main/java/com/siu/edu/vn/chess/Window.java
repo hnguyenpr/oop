@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class GameWindow implements Runnable {
+public class Window implements Runnable {
     private JFrame gameWindow;
 
     private Board board;

@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class Board extends JPanel implements MouseListener, MouseMotionListener {
 
+    private Square[][] squares;
+
     public Board() {
         setLayout(new GridLayout(8, 8, 0, 0));
         this.addMouseListener(this);
@@ -19,10 +21,29 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
         this.setMaximumSize(new Dimension(400, 400));
         this.setMinimumSize(this.getPreferredSize());
         this.setSize(new Dimension(400, 400));
+
+        squares = new Square[8][8];
+        for (int i=0; i < 8; i ++) {
+            for (int j=0; j< 8; j ++) {
+                int xMod = i % 2;
+                int yMod = j % 2;
+                if ((xMod == 0 && yMod == 0) || (xMod == 1 && yMod == 1)) {
+                    squares[i][j] = new Square(0);
+                } else {
+                    squares[i][j] = new Square(1);
+                }
+                this.add(squares[i][j]);
+            }
+        }
     }
 
     @Override
     public void paintComponent(Graphics g) {
+        for (int i=0; i < 8; i ++) {
+            for (int j=0; j< 8; j ++) {
+                squares[i][j].paintComponent(g);
+            }
+        }
     }
 
     @Override
