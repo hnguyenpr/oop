@@ -5,19 +5,17 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 
 public class Square extends JComponent {
-  private int color;
+  private Piece piece;
+  protected Color color;
 
-  public Square(int color) {
-     this.color = color;
+  public void setPiece(Piece piece) {
+    this.piece = piece;
   }
 
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
-    if (this.color == 1) {
-      g.setColor(new Color(255,255,255));
-    } else {
-      g.setColor(new Color(0, 0, 0));
-    }
+    g.setColor(color);
     g.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
+    piece.show(g);
   }
 }

@@ -28,11 +28,12 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
                 int xMod = i % 2;
                 int yMod = j % 2;
                 if ((xMod == 0 && yMod == 0) || (xMod == 1 && yMod == 1)) {
-                    squares[i][j] = new Square(0);
+                    squares[i][j] = new BlackSquare();
                 } else {
-                    squares[i][j] = new Square(1);
+                    squares[i][j] = new WhiteSquare();
                 }
                 this.add(squares[i][j]);
+                squares[i][j].setPiece(new Rock(squares[i][j], Side.BLACK));
             }
         }
     }
