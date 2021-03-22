@@ -4,6 +4,6 @@ import java.awt.Color;
 
 public class BlackSquare extends Square {
   public BlackSquare() {
-    this.color = new Color(50, 45, 9);
+    this.color = new Color(226, 235, 197);
   }
 }

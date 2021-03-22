@@ -3,9 +3,9 @@ package com.siu.edu.vn.chess;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rock extends Piece {
+public class Rook extends BasePiece implements Piece {
 
-  public Rock(Square square, Side side) {
+  public Rook(Square square, Side side) {
     super(square, side);
     if (this.side == Side.BLACK) {
       image = loadImage("/br.png");
@@ -14,7 +14,8 @@ public class Rock extends Piece {
     }
   }
 
-  public List<Square> getLegalMoves() {
+  @Override
+  public List<Square> getLegalMoves(Board board) {
     // TODO
     return new ArrayList<>();
   }

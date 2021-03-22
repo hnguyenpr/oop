@@ -5,7 +5,10 @@ package(default_visibility = ["//visibility:public"])
 java_library(
     name = "lib",
     srcs = glob(["src/main/java/com/siu/edu/vn/**/*.java"]),
-    deps = ["@maven//com/google/guava"],
+    deps = [
+        "@maven//com/google/guava",
+        "@maven//com/google/code/findbugs:jsr305",
+    ],
 )
 
 java_binary(
